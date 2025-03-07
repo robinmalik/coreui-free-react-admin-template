@@ -15,11 +15,6 @@ export default defineConfig(() => {
           autoprefixer({}), // add options if needed
         ],
       },
-      preprocessorOptions: {
-        scss: {
-          quietDeps: true,
-        },
-      },
     },
     esbuild: {
       loader: 'jsx',

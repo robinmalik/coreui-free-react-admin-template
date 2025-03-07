@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import {
+import
+{
   CCloseButton,
   CSidebar,
   CSidebarBrand,
@@ -19,7 +20,8 @@ import { sygnet } from 'src/assets/brand/sygnet'
 // sidebar nav config
 import navigation from '../_nav'
 
-const AppSidebar = () => {
+const AppSidebar = () =>
+{
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
@@ -29,27 +31,30 @@ const AppSidebar = () => {
       className="border-end"
       colorScheme="dark"
       position="fixed"
-      unfoldable={unfoldable}
-      visible={sidebarShow}
-      onVisibleChange={(visible) => {
+      unfoldable={ unfoldable }
+      visible={ sidebarShow }
+      onVisibleChange={ (visible) =>
+      {
         dispatch({ type: 'set', sidebarShow: visible })
-      }}
+      } }
     >
       <CSidebarHeader className="border-bottom">
         <CSidebarBrand to="/">
-          <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
-          <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} />
+          <CIcon customClassName="sidebar-brand-full" icon={ logo } height={ 32 } />
+          <CIcon customClassName="sidebar-brand-narrow" icon={ sygnet } height={ 32 } />
         </CSidebarBrand>
         <CCloseButton
           className="d-lg-none"
           dark
-          onClick={() => dispatch({ type: 'set', sidebarShow: false })}
+          onClick={ () => dispatch({ type: 'set', sidebarShow: false }) }
         />
       </CSidebarHeader>
-      <AppSidebarNav items={navigation} />
+
+      <AppSidebarNav items={ navigation } />
+
       <CSidebarFooter className="border-top d-none d-lg-flex">
         <CSidebarToggler
-          onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
+          onClick={ () => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable }) }
         />
       </CSidebarFooter>
     </CSidebar>
